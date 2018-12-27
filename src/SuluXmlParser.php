@@ -16,19 +16,17 @@ namespace App;
  */
 class SuluXmlParser extends XmlParser
 {
-    protected function childNodeAdded(&$parent, $childKey):void
+    protected function childNodeAdded(&$parent, $childKey): void
     {
-        if($parent['__name'] === 'properties' &&
-            ($parent[$childKey]['__name'] === 'section' || $parent[$childKey]['__name'] === 'block'))
-        {
+        if ($parent['__name'] === 'properties' &&
+            ($parent[$childKey]['__name'] === 'section' || $parent[$childKey]['__name'] === 'block')) {
             $parent[$childKey]['@type'] = $parent[$childKey]['__name'];
         }
     }
 
     protected function beforeNodeReturn(&$node): void
     {
-        if($node['__name'] === 'properties')
-        {
+        if ($node['__name'] === 'properties') {
             $node = $this->arrayifyNode($node);
         }
     }
