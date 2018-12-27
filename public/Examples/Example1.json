@@ -1,0 +1,94 @@
+{
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xmlns": "http://schemas.sulu.io/template/template",
+    "@xsi:schemaLocation": "http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd",
+    "key": "homepage",
+    "view": "templates/pages/homepage",
+    "controller": "SuluWebsiteBundle:Default:index",
+    "cacheLifetime": "86400",
+    "meta": {
+        "title": [
+            {
+                "@lang": "en",
+                "#": "Homepage"
+            },
+            {
+                "@lang": "de",
+                "#": "Startseite"
+            }
+        ]
+    },
+    "properties": [
+        {
+            "@name": "article",
+            "@type": "text_editor",
+            "meta": {
+                "title": [
+                    {
+                        "@lang": "en",
+                        "#": "Article"
+                    },
+                    {
+                        "@lang": "de",
+                        "#": "Artikel"
+                    }
+                ]
+            }
+        },
+        {
+            "@name": "highlight",
+            "properties": [
+                {
+                    "@name": "title",
+                    "@type": "text_line",
+                    "@mandatory": "true",
+                    "meta": {
+                        "title": [
+                            {
+                                "@lang": "en",
+                                "#": "Title"
+                            },
+                            {
+                                "@lang": "de",
+                                "#": "Titel"
+                            }
+                        ]
+                    },
+                    "params": {
+                        "param": {
+                            "@name": "headline",
+                            "@value": "true",
+                            "#": ""
+                        }
+                    },
+                    "tag": {
+                        "@name": "sulu.rlp.part",
+                        "#": ""
+                    }
+                },
+                {
+                    "@name": "url",
+                    "@type": "resource_locator",
+                    "@mandatory": "true",
+                    "meta": {
+                        "title": [
+                            {
+                                "@lang": "en",
+                                "#": "Resourcelocator"
+                            },
+                            {
+                                "@lang": "de",
+                                "#": "Adresse"
+                            }
+                        ]
+                    },
+                    "tag": {
+                        "@name": "sulu.rlp",
+                        "#": ""
+                    }
+                }
+            ],
+            "@type": "section"
+        }
+    ]
+}
